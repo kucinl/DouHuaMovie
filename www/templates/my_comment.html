@@ -1,0 +1,28 @@
+<ion-view view-title="我的影评" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content  class="has-header manual-ios-statusbar-padding">
+    <div style="padding-left:5px;">共{{comments.length}}条影评</div>
+    <ion-list  class=" " ng-repeat="comment in comments">
+      <ion-item  class="light-bg">
+        <ionic-ratings class="ionic_ratings" ratingsobj='ratingsObject' style="pointer-events:none;font-size: 20px;text-align: left;"></ionic-ratings>
+        <any class="energized" style="font-size:15px">{{comment.rating}}分</any>
+        <p style="font-size:13px;white-space:normal;">
+          <strong>
+            {{comment.content}}
+          </strong>
+        </p>
+        <ion-item class="item-thumbnail-left stable-bg" style="min-height:100px;margin-top:20px">
+          <img class="icon ion-image mimg "  ng-src="{{comment.movie.poster}}" style="height:100px;left:0;top:0;bottom:0;"/>
+          <p style=""><strong>{{comment.movie.moviename}}</strong></p>
+          <p style="padding-top:20px">{{comment.movie.type}}</p>
+          <p>大陆电影/105分钟</p>
+        </ion-item>
+        <ion-option-button class="button-assertive" ng-click="deleteComment(comment.commentid)">删除</ion-option-button>
+      </ion-item>
+      <div class="spacer" style="width: 300px; height: 20px;"></div>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

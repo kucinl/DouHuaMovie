@@ -1,0 +1,23 @@
+<ion-view view-title="我的订单" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content  class="has-header manual-ios-statusbar-padding">
+    <ion-list id="page4-list4" class=" " ng-repeat="order in orders">
+      <ion-item id="page4-list-item13"  >
+        {{order.cinemaname}}
+
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="page2-list-item5" style="min-height: 140px;padding-left:100px" ng-click="gotoOrderInfo(order.oid)">
+        <img class="icon ion-image mimg"  style="padding-bottom:2px" ng-src="{{order.poster}}" />
+        <p><strong>{{order.moviename}}</strong>&nbsp;&nbsp;{{order.seats.length}}张</p>&nbsp;
+        <p>{{order.date}}&nbsp;&nbsp;{{order.filmtime}}</p>
+        <p style="font-size:10px"><p>{{order.hall}}<any ng-repeat="seat in order.seats">&nbsp;&nbsp;{{seat}}</any></p>
+      </ion-item>
+      <ion-item id="page4-list-item15" class="">
+        总计： {{order.totalprice}}元
+      </ion-item>
+      <div class="spacer" style="width: 300px; height: 20px;"></div>
+    </ion-list>
+  </ion-content>
+</ion-view>

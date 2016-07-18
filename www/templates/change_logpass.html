@@ -1,0 +1,26 @@
+<ion-view view-title="修改登录密码" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content  class="has-header">
+      <div class="content has-header">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label" >原登录密码：</span>
+            <input type="password" ng-model="cll.oldpwd">
+          </label>
+          <label class="item item-input">
+            <span class="input-label" >新密码：</span>
+            <input type="password" ng-model="cll.newpwd">
+          </label>
+          <label class="item item-input">
+            <span class="input-label" >确认新密码：</span>
+            <input type="password" ng-model="cll.newpwdConfirm">
+          </label>
+        </div>
+        <div class="padding">
+          <button class="button button-block button-assertive" ng-click="changePwd()">确认修改</button>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

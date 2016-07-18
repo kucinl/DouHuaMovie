@@ -1,0 +1,58 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-assertive">
+    <button class="button button-clear button-primary icon ion-android-close" ng-click="loginModal.hide()"></button>
+    <h1 class="title">{{selection}}</h1>
+  </ion-header-bar>
+  <div class="tabs-striped  tabs-background-assertive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item" ng-class="{active:selection == '登录'}" ng-click="selection='登录'"><i class="icon ion-unlocked"></i>登录</a>
+      <a class="tab-item" ng-class="{active:selection == '注册'}"ng-click="selection='注册'"> <i class="icon ion-person"></i> 注册 </a>
+    </div>
+  </div>
+
+    <ion-content class="padding" ng-switch on="selection">
+<div ng-switch-default>
+      <div class="row responsive-sm padding remvoeBP">
+        <div class="col">
+          <div class="app-logo"><img ng-src="{{img.defaultAvatar}}"></div>
+
+          <div class="list list-inset removePM">
+            <label class="item item-input"><input type="text" ng-model="loginForm.username" placeholder="Email Address" > </label>
+            <label class="item item-input"><input type="password" ng-model="loginForm.password" placeholder="Password" > </label>
+          </div>
+
+          <div class="loginButton"><button class="button ion-unlocked button-block button-balanced" ng-click="login();" > 登录 </button>  </div>
+        </div>
+      </div>
+      <div class="row  padding removePM">
+        <div class="col"> <a class=" button-positive button button-block" ng-click="facebookSignIn()"><i class="icon ion-social-facebook"></i></a> </div>
+        <div class="col"> <a class="button-calm button button-block" ng-click="twitterSignIn()"><i class="icon ion-social-twitter"></i></a> </div>
+      </div>
+</div>
+  <div ng-switch-when="注册">
+
+    <div class="row responsive-sm padding ">
+      <div class="col">
+        <div class="list list-inset ">
+          <label class="item item-input"><input type="text" ng-model="signForm.username" placeholder="用户名"> </label>
+          <label class="item item-input"><input type="text" ng-model="signForm.name" placeholder="昵称"> </label>
+          <label class="item item-input"><input type="password" ng-model="signForm. password" placeholder="密码"> </label>
+          <label class="item item-input"><input type="password" ng-model="signForm.passwordConfirm" placeholder="确认密码"> </label>
+          <label class="item item-input"><input type="email" ng-model="signForm.email" placeholder="邮箱"> </label>
+          <label class="item item-input"><input type="password" ng-model="signForm.paypwd" placeholder="支付密码"> </label>
+          <label class="item item-input"><input type="password" ng-model="signForm.paypwdConfirm" placeholder="支付密码确认"> </label>
+        </div>
+        <div class="list list-inset ">
+        <label class="item item-input"><input type="text" ng-model="signForm.bankcardnum" placeholder="银行卡号"> </label>
+        <label class="item item-input"><input type="password" ng-model="signForm.bankcardpaypwd" placeholder="银行卡密码"> </label>
+        <label class="item item-input"><input type="text" ng-model="signForm.bankcardname" placeholder="持卡人姓名"> </label>
+        <label class="item item-input"><input type="text" ng-model="signForm.bankcardsfz" placeholder="持卡人身份证"> </label>
+        <label class="item item-input"><input type="text" ng-model="signForm.bankcardtel" placeholder="持卡人手机"> </label>
+          </div>
+        <div class="loginButton"><button class="button ion-person button-block button-balanced" ng-click="signup()"> 注册 </button>  </div>
+        <br>
+      </div>
+    </div>
+  </div>
+    </ion-content>
+</ion-modal-view>

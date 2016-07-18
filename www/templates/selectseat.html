@@ -1,0 +1,71 @@
+
+<ion-view title="{{title}}" id="page8" class="stable-bg ">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header manual-ios-statusbar-padding">
+    <ion-refresher
+      pulling-icon="ion-load-a"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="content"  >
+
+      <ion-item>
+        <div class="row" style="padding-top:0;padding-bottom:0">
+          <div class="col col-95">
+            <p><strong>{{cinemaname}}</strong></p>
+          </div>
+        </div>
+        <div class="row" style="">
+          <div class="col col-95">
+            <p>{{address}}</p>
+            <p> <td>会员卡 </td><td>4D </td><td>IMAX </td></p>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <div class="legend">
+          <img ng-src="{{chart.available}}">  可选
+          <img ng-src="{{chart.reserved}}" class="padding-left">  已售
+          <img ng-src="{{chart.selected}}" class="padding-left">  已选
+        </div>
+      </ion-item>
+      <ion-item>
+        <p style="text-align: center;"><any style="background-color:#bdbdbd;width:100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中央屏幕位置&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</any></p>
+        <ion-scroll style="width:100%; height: 250px;">
+          <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="center" valign="middle">
+                <table class="seatLayout" >
+                  <tr>
+                    <td class="padding-bottom"></td>
+                    <td class="padding-bottom" ng-repeat="col in cols track by $index" ng-bind="col"></td>
+                  </tr>
+                  <tr ng-repeat="row in rows">
+                    <td class="padding-right" ng-bind="row"></td>
+                    <td class="seat" ng-repeat="col in cols" ng-click="seatClicked(row + col)" ng-switch on="getStatus(row + col)">
+                      <img ng-switch-when="selected" ng-src="{{chart.selected}}">
+                      <img ng-switch-when="reserved" ng-src="{{chart.reserved}}">
+                      <img ng-switch-default ng-src="{{chart.available}}">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </ion-scroll>
+
+
+      </ion-item>
+      <ion-item>
+        <div class="buttons" style="text-align: right">
+          <a class="button button-small button-outline button-assertive" ng-click="clearSelected()"><strong>清空选座</strong></a>
+          <a class="button button-small button-assertive assertive-bg" ng-click="showPay()"><strong>确认选座</strong></a>
+        </div>
+    </div>
+    </ion-item>
+  </ion-content></ion-view>
+
+

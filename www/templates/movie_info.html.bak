@@ -1,0 +1,66 @@
+<ion-view title="电影详情页" id="page5"  class="stable-bg">
+<ion-nav-bar class="bar bar-header bar-assertive" >
+  <ion-nav-back-button class="button-clear"
+    ng-click="myGoBack()">
+    <i class="ion-arrow-return-left"></i> Back
+  </ion-nav-back-button>
+</ion-nav-bar>
+    <ion-content padding="true" class="has-header">
+        <div class="list card " id="page5-card21">
+          <ion-list id="page2-list1" class=" ">
+            <ion-item class="item-thumbnail-left" id="page2-list-item5"  href="#/tabs/movie_info">
+              <img class="icon ion-image mimg" style="max-width:75px;max-height:100px;" ng-src="{{mv.mmes.poster}}" />
+              <div class="row " style="padding-left:15px">
+                <div class="col col-50" padding="false" style="font-size:10px;padding-bottom:15px;"><p><strong>{{mv.mmes.moviename}}</strong></p></div>&nbsp;
+                <div class="col" side="right">
+                  <any class="positive-bg light" side="right" style="font-size:10px;padding:1px;border: 1px solid #387EF5;" >3D</any><any class="positive" style="font-size:10px;padding:1px;border: 1px solid #387EF5;">IMAX</any>
+                </div>
+                <div class="col-25"></div>
+                <div class="col" style="text-align:right;">
+                  <any class="energized">{{mv.mmes.rating}}</any>分
+                </div>
+              </div>
+
+              <div class="row" style="padding-left:15px">
+                <div class="col col-95"><p>
+                  {{mv.mmes.intro}}
+                </p>
+                  <p>今天128家影院放映12312场</p>
+                </div>
+              </div>
+            </ion-item>
+          </ion-list>
+
+            <div id="page5-button-bar4" class="row">
+                <button id="page5-button10" class="col button button-positive  button-block ion-heart" ng-click="collect()">收藏</button>
+              &nbsp
+                <a id="page5-button12" class="col button button-positive  button-block ion-star" href="#/app/tabs/comment/{{mv.mmes.mid}}">评价</a>
+            </div>
+        </div>
+        <div class="list card " id="page5-card22">
+            <a  href="#/app/tabs/movie_cinemas/{{mv.mmes.mid}}" class=" button button-royal  button-block ">立即购票</a>
+            <p id="page5-markdown2" style="color:#000000;" class=" ">{{mv.mmes.intro}}
+            </p>
+        </div>
+      <div style="padding-bottom:5px">演员表</div>
+      <ion-scroll zooming="true" direction="x" style="width:100%; height: 150px" scrollbar-x="false" >
+        <div style="width: 500px; height: 50px;white-space: nowrap;">
+          <img style="height:150px;width:20%;padding:0 4px" ng-repeat="img in mv.mmes.aimgs" ng-src="{{img}}"/>
+        </div>
+      </ion-scroll>
+
+      <div class="list card " id="page5-card26">
+        <h1 id="page5-heading4" style="color:#000000;font-size:20px" class=" ">短评</h1>
+        <ion-list id="page5-list10" class=" ">
+          <ion-item class="item-avatar "  ng-repeat="comment in mv.comments">
+            <img ng-src="{{comment.headimg}}">{{comment.name}}
+            <p>{{comment.content}}</p>
+            <div>
+              <i class="icon ion-chatbox-working item-avatar-right pull-right">23423</i><i class="icon ion-thumbsup item-avatar-right">23423</i>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    </ion-content>
+</ion-view>

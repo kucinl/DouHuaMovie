@@ -1,0 +1,77 @@
+<ion-view title="{{cinema.cinemaname}}" id="page8" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <ion-list id="page8-list13" class=" ">
+      <ion-item class="item-icon-right  " id="page8-list-item44">
+        <div class="row " style="padding:0">
+          <div class="col col-50" style="font-size:10px;padding:0">
+            <p><strong>{{cinema.cinemaname}}</strong></p>
+          </div>&nbsp;
+          <div class="col">
+            <any class="energized">8.8</any>分
+          </div>
+        </div>
+        <div class="row" style="padding:0">
+          <any class="positive" style="font-size:10px;padding:1px;border: 1px solid #387EF5;"><strong>IMAX</strong></any>&nbsp&nbsp
+          <any class="positive" style="font-size:10px;padding:1px;border: 1px solid #387EF5;"><strong>儿童座</strong></any>&nbsp&nbsp
+          <any class="positive" style="font-size:10px;padding:1px;border: 1px solid #387EF5;"><strong>VIP影厅</strong></any>
+        </div>
+      </ion-item>
+
+      <ion-item class="item-icon-right  " id="page8-list-item15" ng-href="tel:18258833985">
+        <p>{{cinema.address}}</p>
+        <i class="icon ion-ios-telephone-outline balanced"></i>
+      </ion-item>
+
+    </ion-list>
+    <tab-slide-box tab="{{movie_index}}">
+      <div class="tsb-icons" style="background-image:url(img/cback.jpg);padding:10px 0;" on-swipe-left="goBehind()" on-swipe-right="goFront()">
+        <div class="tsb-ic-wrp">
+          <a href="javascript:;" ng-repeat="movie in movies" ng-click="changeIndex($index)"><img style="height:150px;width:100%;padding:0 4px" ng-src="{{movie.poster}}"></a>
+        </div>
+      </div>
+      <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="movie in movies" on-finish-render>
+          <div style="text-align:left">{{movie.moviename}}
+            <any class="energized">{{movie.rating}}</any>分</div>
+          <div style="text-align:left">影片时长123分钟</div>
+        </ion-slide>
+      </ion-slide-box>
+
+    </tab-slide-box>
+
+    <br>
+
+    <ion-list id="page8-list6" class=" ">
+      <ion-item id="page8-list-item20" class="  " style="border-width:2px;border-left-width:0;border-right-width:0;padding:5px">
+        <ion-scroll delegate-handle="dateScroll" zooming="true" direction="x" style="width:100%; height: 24px;" scrollbar-y="false">
+          <div style="width: 500px; height: 50px;white-space: nowrap">
+            <a ng-repeat="(k,v) in dates track by $index" ng-click="scrollDate(k)"><button ng-class="{choose:k==ch}" style=" background:white;border-width: 0px;min-width: 120px">{{v | date:'MM月dd号'}}</button></a>
+          </div>
+        </ion-scroll>
+      </ion-item>
+      <ion-item class="  " ng-repeat="session in sessionList">
+        <div class="row">
+          <div class="col-25">
+            <any>{{session.filmtime}}</any>
+          </div>
+          <div class="col-25">
+            <any>国语3D</any>
+          </div>
+          <div class="col-25">
+            <any style="color:red;font-size: 30px;">{{session.price}}</any>
+            <any style="color:red">元</any>
+          </div>
+          <div class="col" style="text-align:right;">
+            <a class="button button-small button-outline button-positive" ng-click="goToSeat(session.cmsid)">购票</a>
+          </div>
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>

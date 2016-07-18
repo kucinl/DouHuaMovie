@@ -1,0 +1,65 @@
+<ion-view view-title="设置" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content  class="has-header">
+<ion-list id="page4-list4" class=" ">
+  <div class="spacer" style="width: 300px; height: 20px;"></div>
+  <ion-item class="item-icon-right" href="#/app/tabs/change_logpass">
+    修改登录密码
+    <i class="icon ion-ios-arrow-right"></i>
+  </ion-item>
+  <ion-item class="item-icon-right" href="#/app/tabs/change_paypass">
+    修改支付密码
+    <i class="icon ion-ios-arrow-right"></i>
+  </ion-item>
+
+  <div class="spacer" style="width: 300px; height: 20px;"></div>
+  <li class="item item-toggle">
+    被赞提醒
+    <label class="toggle toggle-balanced">
+      <input type="checkbox">
+      <div class="track">
+        <div class="handle"></div>
+      </div>
+    </label>
+  </li>
+  <li class="item item-toggle">
+    影评/话题提醒
+    <label class="toggle toggle-balanced">
+      <input type="checkbox">
+      <div class="track">
+        <div class="handle"></div>
+      </div>
+    </label>
+  </li>
+  <li class="item item-toggle">
+    系统通知
+    <label class="toggle toggle-balanced">
+      <input type="checkbox">
+      <div class="track">
+        <div class="handle"></div>
+      </div>
+    </label>
+  </li>
+  <ion-item  class="item-icon-right" ng-click="gotoUndo()">
+    清空缓存
+    <i class="icon ion-ios-arrow-right"></i>
+  </ion-item>
+  <div class="spacer" style="width: 300px; height: 20px;"></div>
+  <ion-item  class="item-icon-right" ng-click="gotoUndo()">
+    意见反馈
+    <i class="icon ion-ios-arrow-right"></i>
+  </ion-item>
+  <ion-item  class="item-icon-right" ng-click="gotoUndo()">
+    关&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于
+    <i class="icon ion-ios-arrow-right"></i>
+  </ion-item>
+</ion-list>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <div style="text-align:center;padding: 0 8px;">
+      <a class="button button-small button-assertive" style="font-size:20px;width:100%;height:40px;line-height: 30px" ng-click="logout()">退出登录</a>
+    </div>
+</ion-content>
+</ion-view>

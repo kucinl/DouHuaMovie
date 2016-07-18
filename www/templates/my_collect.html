@@ -1,0 +1,31 @@
+<ion-view view-title="我的收藏" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header manual-ios-statusbar-padding">
+    <div style="padding-left:5px;">想看{{collections.length}}部电影</div>
+    <ion-list id="page4-list4" class=" ">
+      <ion-item  class="light-bg item-thumbnail-left" style="min-height: 120px;padding-bottom: 0;" ng-repeat="collect in collections">
+        <img class="icon ion-image mimg "  ng-src="{{collect.movie.poster}}" style="height:100px;"/>
+        <div class="row" style="padding-left: 5px;padding-bottom:0">
+          <div class="col-50" style="padding-top: 10px;">
+            <p><strong>{{collect.movie.moviename}}</strong></p></div>
+          <div class="col-33"></div>
+          <div class="col" style="text-align: right"><any class="energized">8.8</any>分</div>
+        </div>
+        <div class="row" style="padding-left: 5px;padding-bottom:0">
+          <div class="col-50" style="padding-top: 20px;font-size:12px;">{{collect.movie.type}}</div>
+        </div>
+        <div class="row" style="padding-left: 5px;padding-bottom:0">
+          <div class="col-50" style="font-size:12px;padding-top:10px">大陆电影/105分钟</div>
+          <div class="col-33"></div>
+          <div class="col" style="text-align:right;">
+            <a class="button button-small button-outline button-positive"  href="#/app/tabs/movie_cinemas3/{{collect.movie.mid}}">购票</a>
+          </div>
+        </div>
+        <ion-option-button class="button-assertive" ng-click="deleteCollect(collect.movie.mid)">删除</ion-option-button>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

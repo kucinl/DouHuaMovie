@@ -1,0 +1,76 @@
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image {
+
+  max-height: 120px;
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+  padding-bottom:8px;
+}
+
+
+.item-text-wrap .item, .item-text-wrap .item-content, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p{
+  max-height: 80px;
+
+}
+
+.item-text-wrap .item, .item-text-wrap .item-content, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p{
+  overflow:hidden;
+}
+
+/*************************************/
+
+/*************************************/
+.loginBg{
+
+  background: rgba(73,155,234,1);
+  background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 100%);
+
+  background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 100%);
+  background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 100%);
+  background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 100%);
+  background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 45%, rgba(73,155,234,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#499bea', GradientType=1 );
+
+}
+
+.app-logo{ max-width:100px; margin:auto; background-repeat:no-repeat;background-position:center;}
+.top-content { padding-top: 10vh;  text-align: center;   }
+.loginButton{ padding-bottom:0px;}
+.remvoeBP{ padding-bottom:0px;}
+.removePM{ margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; }
+
+#menuLinks .list .item{ border-color:#479CF7;}
+#menuLinks .list .item a{ background:#387EF5; color:#fff;}
+/************************************************/
+.choose{
+  color:red;
+  border-bottom-width:2px !important;
+  border-bottom-color:red;
+}
+.back{
+  background-color:gray;
+}
+
+.button-small {
+  padding: 2px 4px 1px;
+  min-width: 50px;
+  min-height: 30px;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+.padding {
+  padding-left: 0px;
+  padding-right:0px;
+}
+
+.button{
+  background:white;
+}
+
+/************************************************home text padding*/
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+  padding-top: 8px;
+  padding-left: 90px;
+  min-height: 100px;
+}

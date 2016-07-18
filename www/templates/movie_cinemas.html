@@ -1,0 +1,35 @@
+
+<ion-view view-title="{{title}}" id="page3" class="stable-bg">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
+  <ion-content  class="has-header has-tabs manual-ios-statusbar-padding"  >
+    <ion-refresher
+      pulling-icon="ion-load-a"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list id="page3-list2" class=" " ng-show="!mcv.showError">
+      <ion-item id="page3-list-item6" class="  " ng-repeat="(i,cinema) in mcv.cinemas" ng-click="gotoCinemaInfo(cinema.cid,movie.mid)">
+        <div class="row">
+          <div class="col col-50">{{cinema.cinemaname}}</div>
+          <div class="col" ><td>23.9</td><td class="">元起</td></div>
+        </div>
+
+        <div class="row" style="">
+          <div class="col col-95">
+            <p>{{cinema.address}}</p>
+            <p> <td>会员卡 </td><td>4D </td><td>IMAX </td></p>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div style=postion:relative" ng-show="mcv.showError">
+      <div  style="text-align:center;position:absolute;top:70%;left:50%;height:30%;width:50%;margin:-15% 0 0 -25%">
+        <p>网络似乎出错了</p>
+        <button class="button button-small button-outline button-assertive" ng-click="reTry()">点击刷新</button>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
+

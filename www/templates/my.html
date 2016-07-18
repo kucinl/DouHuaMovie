@@ -1,0 +1,80 @@
+<ion-view view-title="我的" hide-nav-bar="true" id="page4" class="stable-bg" >
+  <ion-content  class="manual-ios-statusbar-padding has-tabs">
+    <ion-list id="page4-list5" class="" ng-switch="user.token =='-1'">
+      <ion-item class="item item-assertive  item-avatar  item-icon-right"  ng-click="loginModal.show()" ng-switch-default>
+        <img ng-src="{{img.noLogin}}">
+        <h2 style="color:white">立即登录</h2>
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+      <ion-item class="item-avatar item-assertive  item-icon-right"  ng-switch-when="false">
+        <img ng-src="{{user.headimg}}">
+        <h2 style="color:white">{{user.name}}</h2>
+      </ion-item>
+    </ion-list>
+    <ion-item style="padding:0">
+    <div  class=" button-bar " >
+      <div class="row">
+        <div class="col col-25" style="text-align: center">
+          <a style="text-decoration:none" ng-click="gotoCollect()"><i class="icon ion-ios-heart assertive" style="font-size: 40px;" ><br><any style="font-size:15px;color:black" >想看</any></i></a>
+        </div>
+        <div class="col col-25" style="text-align: center">
+          <a ng-click="gotoUndo()"style="text-decoration:none"><i class="icon ion-eye balanced" style="font-size: 40px;"><br><any style="font-size:15px;color:black">看过</any></i></a>
+        </div>
+        <div class="col col-25" style="text-align: center">
+          <a style="text-decoration:none"  ng-click="gotoComment()"><i class="icon ion-chatbubble-working energized" style="font-size: 40px;"><br><any style="font-size:15px;color:black">影评</any></i></a>
+        </div>
+        <div class="col col-25" style="text-align: center">
+          <a ng-click="gotoUndo()" style="text-decoration:none"><i class="icon ion-pricetag positive" style="font-size: 40px;"><br><any style="font-size:15px;color:black">话题</any></i></a>
+        </div>
+      </div>
+
+    </div>
+    </ion-item>
+
+    <div class="spacer" style="width: 300px; height: 27px;"></div>
+      <ion-list id="page4-list"6 class=" ">
+          <ion-item id="page4-list-item16" class="item-icon-right" ng-click="gotoOrder()">
+            我的订单
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+        </ion-list>
+        <ion-item style="padding:0">
+        <div  class=" button-bar " >
+          <div class="row">
+            <div class="col col-25" style="text-align: center">
+              <a ng-click="gotoUndo()" style="text-decoration:none"><i class="icon dark ion-ios-bookmarks-outline" style="font-size: 30px;"><br><any style="font-size:15px;color:black">未消费</any></i></a>
+            </div>
+            <div class="col col-25" style="text-align: center">
+              <a ng-click="gotoUndo()" style="text-decoration:none"><i class="icon dark ion-ios-timer-outline" style="font-size: 30px;"><br><any style="font-size:15px;color:black">待付款</any></i></a>
+            </div>
+            <div class="col col-25" style="text-align: center">
+              <a ng-click="gotoUndo()" style="text-decoration:none"><i class="icon dark ion-ios-pricetag-outline energized" style="font-size: 30px;"><br><any style="font-size:15px;color:black">待评价</any></i></a>
+            </div>
+            <div class="col col-25" style="text-align: center">
+              <a ng-click="gotoUndo()" style="text-decoration:none"><i class="icon dark ion-reply-all positive" style="font-size: 30px;"><br><any style="font-size:15px;color:black">退款</any></i></a>
+            </div>
+          </div>
+        </div>
+        </ion-item>
+        <div class="spacer" style="width: 300px; height: 27px;"></div>
+
+    <ion-list id="page4-list3" class=" ">
+      <ion-item id="page4-list-item9" class=" item-icon-right " ng-click="gotoUndo()">我的消息<i class="icon ion-ios-arrow-right"></i></ion-item>
+      <ion-item id="page4-list-item10" class="item-icon-right  " ng-click="gotoWallet()">我的钱包<i class="icon ion-ios-arrow-right"></i></ion-item>
+      <ion-item id="page4-list-item11" class=" item-icon-right " ng-click="gotoUndo()">我的卡券<i class="icon ion-ios-arrow-right"></i></ion-item>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 21px;"></div>
+    <ion-list id="page4-list4" class=" ">
+      <ion-item id="page4-list-item12" class="item-icon-right  " ng-click="gotoUndo()">优惠券<i class="icon ion-ios-arrow-right"></i></ion-item>
+      <ion-item id="page4-list-item13" class=" item-icon-right " ng-click="gotoUndo()">会员卡<i class="icon ion-ios-arrow-right"></i></ion-item>
+      <ion-item id="page4-list-item14" class=" item-icon-right " ng-click="gotoUndo()">商&nbsp;&nbsp;&nbsp;&nbsp;城<i class="icon ion-ios-arrow-right"></i></ion-item>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 21px;"></div>
+    <ion-list class=" ">
+      <ion-item  class="item-icon-right" ng-click="gotoSetting()">
+        设&nbsp;&nbsp;&nbsp;&nbsp;置
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

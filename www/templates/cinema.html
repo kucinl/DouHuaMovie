@@ -1,0 +1,42 @@
+
+<ion-view view-title="影院" id="page3" class="stable-bg">
+  <ion-content  class="has-header has-tabs manual-ios-statusbar-padding"  >
+    <ion-refresher
+      pulling-icon="ion-load-a"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-slide-box auto-play="true" does-continue="true" show-pager="false">
+      <ion-slide>
+        <div ><img style="height:100px;width:100%" ng-src="{{cv.ads[0].src}}"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div ><img style="height:100px;width:100%" ng-src="{{cv.ads[1].src}}"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div ><img style="height:100px;width:100%" ng-src="{{cv.ads[2].src}}"/></div>
+      </ion-slide>
+    </ion-slide-box>
+    <ion-list id="page3-list2" class=" " ng-show="!cv.showError">
+      <ion-item id="page3-list-item6" class="  " ng-repeat="(i,cinema) in cv.cinemas" href="#/app/tabs/cinema_info2/{{cinema.cid}}/-1">
+        <div class="row">
+          <div class="col col-50"><p><b>{{cinema.cinemaname}}</b></p></div>
+          <div class="col" ><p class="text-right"><samll>23.9元起</samll></p></div>
+        </div>
+
+        <div class="row" style="">
+          <div class="col col-95">
+            <p>{{cinema.address}}</p>
+            <p> <td>会员卡 </td><td>4D </td><td>IMAX </td></p>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div style=postion:relative" ng-show="cv.showError">
+    <div  style="text-align:center;position:absolute;top:70%;left:50%;height:30%;width:50%;margin:-15% 0 0 -25%">
+      <p>网络似乎出错了</p>
+      <button class="button button-small button-outline button-assertive" ng-click="reTry()">点击刷新</button>
+    </div>
+    </div>
+  </ion-content>
+
+</ion-view>

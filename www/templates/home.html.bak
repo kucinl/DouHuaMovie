@@ -1,0 +1,69 @@
+<ion-view view-title="电影" id="page2" class="stable-bg">
+  
+  <ion-content padding="false" class="has-header has-tabs manual-ios-statusbar-padding">
+    <ion-refresher
+      pulling-icon="ion-load-a"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <card>
+      <label class="item item-input item-input-inset ">
+        <i class="icon ion-search placeholder-icon assertive"></i>
+        <input type="search" placeholder="" ng-model="searchText">
+      </label>
+    </card>
+
+    <ion-slide-box auto-play="true" does-continue="true" show-pager="false">
+      <ion-slide>
+        <div><img style="height:100px;width:100%" ng-src="{{hv.ads[0].src}}"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div><img style="height:100px;width:100%" ng-src="{{hv.ads[1].src}}"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div><img style="height:100px;width:100%" ng-src="{{hv.ads[2].src}}"/></div>
+      </ion-slide>
+    </ion-slide-box>
+    <ion-list id="page2-list1" class=" " ng-show="!hv.showError">
+      <ion-item class="item-thumbnail-left" style="max-height: 125px;"
+                ng-repeat="(index,mmes) in hv.mmess | filter:searchText" nav-direction="forward"  href="#/app/tabs/movie_info/{{index}}">
+        <img class="icon ion-image mimg" style="height:100px;width: 75px;" ng-src="{{mmes.poster}}"/>
+        <div class="row ">
+          <div class="col col-50" padding="false" style="font-size:10px;padding-bottom:15px;"><p><strong>{{mmes.moviename}}</strong>
+          </p></div>
+          &nbsp;
+          <div class="col" side="right">
+            <any class="positive-bg light" side="right" style="font-size:10px;padding:1px;border: 1px solid #387EF5;">
+              3D
+            </any>
+            <any class="positive" style="font-size:10px;padding:1px;border: 1px solid #387EF5;">IMAX</any>
+          </div>
+          <div class="col-25"></div>
+          <div class="col" style="text-align:right;">
+            <any class="energized">{{mmes.rating}}</any>
+            分
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>{{mmes.intro}}</p>
+          </div>
+        </div>
+
+        <div class="row " padding="false">
+          <div class="col col-80" padding="false"><p style="font-size:10px">
+            <p>今天128家影院放映12312场</p></div>
+          <div class="col" style="text-align:right;">
+            <a class="button button-small button-outline button-assertive" href="#/app/tabs/movie_cinemas/{{mmes.mid}}">购票</a>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div style=postion:relative" ng-show="hv.showError">
+      <div style="text-align:center;position:absolute;top:70%;left:50%;height:30%;width:50%;margin:-15% 0 0 -25%">
+        <p>网络似乎出错了</p>
+        <button class="button button-small button-outline button-assertive" ng-click="reTry()">点击刷新</button>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
